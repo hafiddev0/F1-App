@@ -1,17 +1,17 @@
-# Copilot Instructions for F1 App
+# Instructions for F1 App
 
 ## Project Overview
 
-F1 App is a web application for enthusiasts of Formula 1 using OpenF1 API that provides detailed Formula 1 telemetry, timing, and session data. 🏎️
+F1 App is a web application for .
 
 ### Tech Stack
 
-- **Framework**: [Angular/TypeScript]
+- **Framework**: [React/Vue/Angular/Other]
 - **Language**: [TypeScript/JavaScript]
-- **Build Tool**: [Webpack/Next.js]
-- **Package Manager**: [npm]
-- **Backend**: [None]
-- **Database**: [None]
+- **Build Tool**: [Vite/Webpack/Next.js/Other]
+- **Package Manager**: [npm/yarn/pnpm]
+- **Backend**: [Node.js/Python/Other or None if frontend-only]
+- **Database**: [PostgreSQL/MongoDB/Firebase/Other or None]
 
 ## Build, Test & Lint Commands
 
@@ -81,22 +81,22 @@ npm run preview
 src/
 ├── components/       # Reusable UI components
 ├── pages/           # Page-level components (or routes)
-├── hooks/           # Custom Angular hooks
+├── hooks/           # Custom React hooks
 ├── services/        # API calls and external service integrations
-├── store/           # State management RxJs
+├── store/           # State management (Redux, Zustand, Pinia, etc.)
 ├── types/           # TypeScript type definitions
 ├── utils/           # Helper functions and utilities
 ├── styles/          # Global styles and theme configuration
-└── App.ts          # Root component
+└── App.tsx          # Root component
 ```
 
 ### Key Architectural Patterns
 
 - **Component-driven**: Break UI into small, reusable components
 - **Separation of concerns**: Keep components focused on presentation, move logic to hooks/services
-- **State management**: I use RxJs for state management and data flow
-- **API integration**: I use services to handle API calls and data fetching, keeping components clean and focused on UI
-- **Routing**: I use Angular Router for navigation between pages, with route guards for authentication and authorization where necessary
+- **State management**: [Describe your state management approach - Redux, Zustand, Context API, etc.]
+- **API integration**: [Describe how API calls are structured - custom hooks, service layer, etc.]
+- **Routing**: [Describe how routing works if applicable]
 
 ## Code Conventions
 
@@ -117,10 +117,10 @@ export const MyComponent: React.FC<ComponentProps> = ({ prop1, prop2 }) => {
 
 ### File Naming
 
-- **Components**: PascalCase (e.g., `UserProfile.ts`)
+- **Components**: PascalCase (e.g., `UserProfile.tsx`)
 - **Utilities/Hooks**: camelCase (e.g., `useUserData.ts`, `formatDate.ts`)
 - **Types**: PascalCase (e.g., `User.types.ts`)
-- **Styles**: Match component name (e.g., `UserProfile.module.css`)
+- **Styles**: Match component name (e.g., `UserProfile.module.css` or `UserProfile.styles.ts`)
 
 ### Imports & Exports
 
@@ -130,7 +130,7 @@ export const MyComponent: React.FC<ComponentProps> = ({ prop1, prop2 }) => {
 
 ### Testing
 
-- Test file location: Colocate test files with source (`Component.test.ts` next to `Component.ts`)
+- Test file location: Colocate test files with source (`Component.test.tsx` next to `Component.tsx`)
 - Use descriptive test names that explain behavior
 - Prioritize testing user interactions over implementation details
 - Mock API calls, not components
@@ -141,7 +141,7 @@ export const MyComponent: React.FC<ComponentProps> = ({ prop1, prop2 }) => {
 
 1. Ensure dependencies are installed: `npm install`
 2. Start the dev server: `npm run dev`
-3. Open browser to local dev URL (typically `http://localhost:3000`)
+3. Open browser to local dev URL (typically `http://localhost:5173` or `http://localhost:3000`)
 
 ### While Developing
 
@@ -162,10 +162,10 @@ npm run build            # Verify build succeeds
 
 ### Adding a New Page/Component
 
-1. Create component file in `src/components/`
+1. Create component file in `src/components/` or `src/pages/`
 2. Define TypeScript interface for props
 3. Write component logic
-4. Create corresponding `.test.ts` file
+4. Create corresponding `.test.tsx` file
 5. Add routing if it's a page-level component
 
 ### Fetching Data from API
@@ -176,7 +176,8 @@ npm run build            # Verify build succeeds
 
 ### Styling Components
 
-- Use Tailwind CSS for utility-first styling
+- [Describe your styling approach: CSS Modules, Tailwind, styled-components, etc.]
+- [Any naming conventions or organizational patterns]
 
 ## Important Notes
 

@@ -1,0 +1,231 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* F1 engineering lab palette */
+  --color-race-red: var(--race-red);
+  --color-race-purple: var(--race-purple);
+  --color-race-green: var(--race-green);
+  --color-race-yellow: var(--race-yellow);
+
+  /* Team colours (data accents) */
+  --color-team-rb: var(--team-rb);
+  --color-team-ferrari: var(--team-ferrari);
+  --color-team-merc: var(--team-merc);
+  --color-team-mclaren: var(--team-mclaren);
+  --color-team-aston: var(--team-aston);
+  --color-team-alpine: var(--team-alpine);
+  --color-team-haas: var(--team-haas);
+  --color-team-racing-bulls: var(--team-racing-bulls);
+  --color-team-williams: var(--team-williams);
+  --color-team-kick: var(--team-kick);
+
+  /* Surface scale for the engineering UI */
+  --color-surface-950: var(--surface-950);
+  --color-surface-900: var(--surface-900);
+  --color-surface-800: var(--surface-800);
+  --color-surface-700: var(--surface-700);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Engineering lab dark is the default experience. */
+  --background: oklch(0.13 0.02 260);
+  --foreground: oklch(0.84 0 0);
+  --card: oklch(0.16 0.02 260);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.16 0.02 260);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.65 0.22 25);
+  --primary-foreground: oklch(0.13 0.02 260);
+  --secondary: oklch(0.22 0.02 260);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.22 0.02 260);
+  --muted-foreground: oklch(0.55 0 0);
+  --accent: oklch(0.22 0.02 260);
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.58 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.20 0.02 260);
+  --input: oklch(0.22 0.02 260);
+  --ring: oklch(0.55 0.05 260);
+  --chart-1: oklch(0.65 0.22 25);
+  --chart-2: oklch(0.6 0.12 185);
+  --chart-3: oklch(0.4 0.07 230);
+  --chart-4: oklch(0.83 0.19 85);
+  --chart-5: oklch(0.77 0.19 70);
+  --sidebar: oklch(0.16 0.02 260);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.65 0.22 25);
+  --sidebar-primary-foreground: oklch(0.13 0.02 260);
+  --sidebar-accent: oklch(0.22 0.02 260);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.20 0.02 260);
+  --sidebar-ring: oklch(0.55 0.05 260);
+
+  --race-red: oklch(0.63 0.22 25);
+  --race-purple: oklch(0.52 0.22 320);
+  --race-green: oklch(0.65 0.2 145);
+  --race-yellow: oklch(0.75 0.16 95);
+
+  --team-rb: oklch(0.52 0.16 255);
+  --team-ferrari: oklch(0.55 0.24 25);
+  --team-merc: oklch(0.86 0.18 175);
+  --team-mclaren: oklch(0.68 0.19 65);
+  --team-aston: oklch(0.55 0.14 155);
+  --team-alpine: oklch(0.62 0.18 285);
+  --team-haas: oklch(0.55 0.05 25);
+  --team-racing-bulls: oklch(0.45 0.18 265);
+  --team-williams: oklch(0.45 0.18 250);
+  --team-kick: oklch(0.55 0.12 140);
+
+  --surface-950: oklch(0.13 0.02 260);
+  --surface-900: oklch(0.18 0.02 260);
+  --surface-800: oklch(0.23 0.02 260);
+  --surface-700: oklch(0.30 0.02 260);
+}
+
+.dark {
+  --background: oklch(0.13 0.02 260);
+  --foreground: oklch(0.84 0 0);
+  --card: oklch(0.16 0.02 260);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.16 0.02 260);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.65 0.22 25);
+  --primary-foreground: oklch(0.13 0.02 260);
+  --secondary: oklch(0.22 0.02 260);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.22 0.02 260);
+  --muted-foreground: oklch(0.55 0 0);
+  --accent: oklch(0.22 0.02 260);
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.58 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.20 0.02 260);
+  --input: oklch(0.22 0.02 260);
+  --ring: oklch(0.55 0.05 260);
+  --chart-1: oklch(0.65 0.22 25);
+  --chart-2: oklch(0.6 0.12 185);
+  --chart-3: oklch(0.4 0.07 230);
+  --chart-4: oklch(0.83 0.19 85);
+  --chart-5: oklch(0.77 0.19 70);
+  --sidebar: oklch(0.16 0.02 260);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.65 0.22 25);
+  --sidebar-primary-foreground: oklch(0.13 0.02 260);
+  --sidebar-accent: oklch(0.22 0.02 260);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.20 0.02 260);
+  --sidebar-ring: oklch(0.55 0.05 260);
+
+  --race-red: oklch(0.63 0.22 25);
+  --race-purple: oklch(0.52 0.22 320);
+  --race-green: oklch(0.65 0.2 145);
+  --race-yellow: oklch(0.75 0.16 95);
+
+  --team-rb: oklch(0.52 0.16 255);
+  --team-ferrari: oklch(0.55 0.24 25);
+  --team-merc: oklch(0.86 0.18 175);
+  --team-mclaren: oklch(0.68 0.19 65);
+  --team-aston: oklch(0.55 0.14 155);
+  --team-alpine: oklch(0.62 0.18 285);
+  --team-haas: oklch(0.55 0.05 25);
+  --team-racing-bulls: oklch(0.45 0.18 265);
+  --team-williams: oklch(0.45 0.18 250);
+  --team-kick: oklch(0.55 0.12 140);
+
+  --surface-950: oklch(0.13 0.02 260);
+  --surface-900: oklch(0.18 0.02 260);
+  --surface-800: oklch(0.23 0.02 260);
+  --surface-700: oklch(0.30 0.02 260);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* Scrollbar styling for the engineering cockpit. */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: oklch(0.30 0.02 260);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.40 0.02 260);
+}
